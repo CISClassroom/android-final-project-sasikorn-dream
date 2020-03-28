@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "47986005498",
+    "firebase_url": "https://finalproject-e0803.firebaseio.com",
+    "project_id": "finalproject-e0803",
+    "storage_bucket": "finalproject-e0803.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47986005498:android:2b5d7bb775aa031baa8043",
+        "android_client_info": {
+          "package_name": "th.ac.kku.cis.mobileapp.beautycafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47986005498-ej3aogf0uqh14jge4stma0tr8lr9nfk1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "th.ac.kku.cis.mobileapp.beautycafe",
+            "certificate_hash": "c34a003550dd22719c6fd5715fd29f820c7e4494"
+          }
+        },
+        {
+          "client_id": "47986005498-oef9bshfciqib4me9comd14k476kc678.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkOMUNWjWxh5ZiH-8SMUoG4bcyK-tADoY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47986005498-oef9bshfciqib4me9comd14k476kc678.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47986005498:android:e236628cee7bee47aa8043",
+        "android_client_info": {
+          "package_name": "th.ac.kku.cis.mobileapp.myfinalapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "47986005498-oef9bshfciqib4me9comd14k476kc678.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkOMUNWjWxh5ZiH-8SMUoG4bcyK-tADoY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "47986005498-oef9bshfciqib4me9comd14k476kc678.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
