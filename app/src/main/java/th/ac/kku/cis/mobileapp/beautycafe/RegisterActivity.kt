@@ -7,16 +7,17 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     var mAuth : FirebaseAuth? = null
-    private val TAG : String = "Login Activity"
+    private val TAG : String = "Register Activity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-         mAuth = FirebaseAuth.getInstance()
+        setContentView(R.layout.activity_register)
+
+        mAuth = FirebaseAuth.getInstance()
 
         if (mAuth!!.currentUser != null){
-            startActivity(Intent(this@LoginActivity,ResultActivity::class.java))
+            startActivity(Intent(this@RegisterActivity,ResultActivity::class.java))
             finish()
         }
         RegisterBtn.setOnClickListener {
@@ -25,32 +26,33 @@ class LoginActivity : AppCompatActivity() {
 
             if (email.isEmpty())
             {
-                Toast.makeText(this,"Please enter your Email",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please enter your Email", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if(password.isEmpty()){
-                Toast.makeText(this,"Please enter your password ",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please enter your password ", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            mAuth!!.signInWithEmailAndPassword(email,password).addOnCompleteListener { task ->
+            mAuth!!.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
                 if (!task.isSuccessful){
                     if (password.length < 6){
-                        Toast.makeText(this,"รหัสผ่านต้องไม่น้อยกว่า 6 ตัวอักษร",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Password too short! Please enter minimum 6 characters", Toast.LENGTH_SHORT).show()
                     }
                     else{
-                        Toast.makeText(this,"Authentication Failed "+ task.exception,Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Authentication Failed "+ task.exception, Toast.LENGTH_SHORT).show()
                     }
                 }else{
-                    Toast.makeText(this,"Sign in Successfull",Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this@LoginActivity,ResultActivity::class.java))
-                    finish()
+
+                    Toast.makeText(this,"Create Account Successfull", Toast.LENGTH_SHORT).show()
                 }
 
+                startActivity(Intent(this@RegisterActivity,ResultActivity::class.java))
+                finish()
             }
         }
         signin.setOnClickListener {
-            startActivity(Intent(this@LoginActivity,RegisterActivity::class.java))
+            startActivity(Intent(this@RegisterActivity,LoginActivity::class.java))
         }
     }
 }
