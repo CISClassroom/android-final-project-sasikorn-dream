@@ -15,7 +15,6 @@
         <activity android:name=".ShowTips_Admin_Activity" />
         <activity android:name=".AdminActivity" />
         <activity android:name=".testActivity" />
-        <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".MainActivity">

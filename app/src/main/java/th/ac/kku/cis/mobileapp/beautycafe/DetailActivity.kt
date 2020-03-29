@@ -43,8 +43,9 @@ class DetailActivity : AppCompatActivity() {
             while (items.hasNext()){
                 val currentItem = items.next().getValue() as HashMap<String, Any>
                 if (currentItem.get("tipsOfHair_id")==id){
-                    textView6.text = currentItem.get("nameOfTips") as String
-                    textView7.text = currentItem.get("detailOfTips") as String
+                    TopictextView6.text = currentItem.get("nameOfTips") as String
+                    detailtextView7.text = currentItem.get("detailOfTips") as String
+                    getdate.text = currentItem.get("date_Post") as String
                 }
             }
         }

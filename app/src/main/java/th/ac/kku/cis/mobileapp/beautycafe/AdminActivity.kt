@@ -19,6 +19,8 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_admin.*
+import java.text.SimpleDateFormat
+import java.util.*
 import java.util.jar.Manifest
 
 
@@ -80,10 +82,15 @@ class AdminActivity : AppCompatActivity() {
                 DetailOfTips_editText2.error = "กรุณากรอกรายละเอียดเคล็ดลับการดูแลผม"
                 return@setOnClickListener
             }
+
+            val calendar: Calendar = Calendar.getInstance()
+            val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+            val formattedDate = format.format(calendar.time)
+            val date_Post = formattedDate.toString()
             if (nameOfTips.isNotEmpty() && DetailOfTips.isNotEmpty()){
                 val ref = FirebaseDatabase.getInstance().getReference("TipsOfHair")
                 val TipsOfHair_id = ref.push().key
-                val Tips = TipsOfHair_id?.let { TipsOfHair(it,nameOfTips, DetailOfTips) }
+                val Tips = TipsOfHair_id?.let { TipsOfHair(it,nameOfTips, DetailOfTips,date_Post) }
                 if (TipsOfHair_id != null){
                     ref.child(TipsOfHair_id).setValue(Tips).addOnCompleteListener {
                         Toast.makeText(this,"Add Data Successfull",Toast.LENGTH_LONG).show()
@@ -94,7 +101,8 @@ class AdminActivity : AppCompatActivity() {
                 val intent = Intent(this@AdminActivity,ShowTips_Admin_Activity::class.java)
                 intent.putExtra("nameTips",""+nameOfTips)
                 intent.putExtra("DetailTips",""+DetailOfTips)
-                if (nameOfTips.isNotEmpty() && DetailOfTips.isNotEmpty()){
+                intent.putExtra("date_Post",""+date_Post)
+                if (nameOfTips.isNotEmpty() && DetailOfTips.isNotEmpty() && date_Post.isNotEmpty()){
                     startActivity(intent)
                     finish()
                 }

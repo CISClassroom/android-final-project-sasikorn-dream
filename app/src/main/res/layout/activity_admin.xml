@@ -67,4 +67,9 @@
         android:text="เพิ่มข้อมูล"
         android:textColor="#FFFFFF" />
 
+    <TextView
+        android:id="@+id/timesave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
