@@ -40,7 +40,9 @@ class ResultActivity : AppCompatActivity() {
         }
         manageBtn.setOnClickListener {
             startActivity(Intent(this,ShowTips_Admin_Activity::class.java))
-
+        }
+        userview.setOnClickListener {
+            startActivity(Intent(this,UserViewActivity::class.java))
         }
     }
 

@@ -1,46 +1,38 @@
 package th.ac.kku.cis.mobileapp.beautycafe
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
 import android.widget.ListView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
 import com.google.firebase.database.*
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference;
 import kotlinx.android.synthetic.main.activity_show_tips__admin_.*
-import kotlinx.android.synthetic.main.activity_test.*
+import kotlinx.android.synthetic.main.activity_user_view.*
 
-
-class ShowTips_Admin_Activity : AppCompatActivity() {
+class UserViewActivity : AppCompatActivity() {
     var Topiclist: MutableList<model>? = null
     lateinit var adapter: adapter
     private var listViewItems: ListView? = null
     lateinit var mDatabase: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_show_tips__admin_)
+        setContentView(R.layout.activity_user_view)
 
         mDatabase = FirebaseDatabase.getInstance().reference
         mDatabase.orderByKey().addListenerForSingleValueEvent(itemListener)
 
-        listViewItems = findViewById<View>(R.id.listview_admin) as ListView
-
+        listViewItems = findViewById<View>(R.id.listview_user) as ListView
         Topiclist = mutableListOf<model>() //เป็นการประกาศarray
         adapter = adapter(this, Topiclist!!) //เป็นการเอาค่าtestlist มาใส่ในadapter
         listViewItems!!.setAdapter(adapter)
 
-        listview_admin.setOnItemClickListener{parent, view, position, id ->
+        listview_user.setOnItemClickListener{parent, view, position, id ->
             val selectedItem = parent.getItemAtPosition(position) as model
-            val intent = Intent(this@ShowTips_Admin_Activity,DetailActivity::class.java)
+            val intent = Intent(this@UserViewActivity,DetailForUserActivity::class.java)
             intent.putExtra("id", selectedItem.TipsOfHair_id)
             startActivity(intent)
             finish()
         }
-
     }
     var itemListener: ValueEventListener = object : ValueEventListener {
 
