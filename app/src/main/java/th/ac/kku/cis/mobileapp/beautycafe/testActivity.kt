@@ -26,7 +26,7 @@ class testActivity : AppCompatActivity() {
         var i = 0
         while (i != 5){
 
-            testlist!!.add(model("สวัสดี"+ i.toString()))
+//            testlist!!.add(model("สวัสดี"+ i.toString()))
             i += 1
         }
 

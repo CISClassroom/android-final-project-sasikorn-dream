@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:layout_weight="1"
+        android:layout_weight="0.7"
         android:src="@drawable/hair"
         app:civ_border_color="#fff"
         app:civ_border_width="2dp" />
@@ -27,7 +27,8 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:layout_weight="1.2" />
 
     <Button
         android:id="@+id/main_email_Btn"
@@ -35,10 +36,12 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#4F9EDD"
         android:gravity="center"
-        android:text="Signin with Email"
+        android:padding="25dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:text="Sign in with Email"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="281dp" />
+         />
 
     <TextView
         android:id="@+id/textView2"

@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.emaillogin
+import kotlinx.android.synthetic.main.activity_login.loginBtn
+import kotlinx.android.synthetic.main.activity_login.passwordlogin
 
 class LoginActivity : AppCompatActivity() {
     var mAuth : FirebaseAuth? = null
@@ -19,17 +22,19 @@ class LoginActivity : AppCompatActivity() {
             startActivity(Intent(this@LoginActivity,ResultActivity::class.java))
             finish()
         }
-        RegisterBtn.setOnClickListener {
-            val email = emailRegister.text.toString().trim{it <= ' '}
-            val password = passwordRegister.text.toString().trim{it <= ' '}
+        loginBtn.setOnClickListener {
+            val email = emaillogin.text.toString().trim{it <= ' '}
+            val password = passwordlogin.text.toString().trim{it <= ' '}
 
             if (email.isEmpty())
             {
-                Toast.makeText(this,"Please enter your Email",Toast.LENGTH_SHORT).show()
+                emaillogin.error = "Please enter your Email"
+                //Toast.makeText(this,"Please enter your Email",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             if(password.isEmpty()){
-                Toast.makeText(this,"Please enter your password ",Toast.LENGTH_SHORT).show()
+                passwordlogin.error = "Please enter your password"
+                //Toast.makeText(this,"Please enter your password ",Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -49,8 +54,8 @@ class LoginActivity : AppCompatActivity() {
 
             }
         }
-        signin.setOnClickListener {
-            startActivity(Intent(this@LoginActivity,RegisterActivity::class.java))
-        }
+//        signin.setOnClickListener {
+//            startActivity(Intent(this@LoginActivity,RegisterActivity::class.java))
+//        }
     }
 }

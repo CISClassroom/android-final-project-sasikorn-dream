@@ -35,8 +35,12 @@ class ResultActivity : AppCompatActivity() {
             finish()
         }
 
-        button2.setOnClickListener {
-            startActivity(Intent(this,testActivity::class.java))
+        adminmanage.setOnClickListener {
+            startActivity(Intent(this,AdminActivity::class.java))
+        }
+        manageBtn.setOnClickListener {
+            startActivity(Intent(this,ShowTips_Admin_Activity::class.java))
+
         }
     }
 

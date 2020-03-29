@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp"
     android:orientation="vertical"
     tools:context=".ResultActivity">
 
@@ -11,30 +13,33 @@
         android:id="@+id/showemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:gravity="right"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:gravity="right" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/adminmanage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="#673AB7"
-        android:text="Admin Page"
+        android:text="Add Post"
         android:textColor="#FFFFFF" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/manageBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="Detail Post"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/userview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="#03A9F4"
-        android:text="Userpage"
+        android:text="User View"
         android:textColor="#FFFFFF" />
 
     <Button
