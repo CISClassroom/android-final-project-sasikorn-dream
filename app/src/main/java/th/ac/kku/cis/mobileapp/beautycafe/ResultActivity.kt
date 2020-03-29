@@ -34,6 +34,10 @@ class ResultActivity : AppCompatActivity() {
             startActivity(Intent(this@ResultActivity,MainActivity::class.java))
             finish()
         }
+
+        button2.setOnClickListener {
+            startActivity(Intent(this,testActivity::class.java))
+        }
     }
 
     override fun onStart() {
